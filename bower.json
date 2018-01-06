@@ -1,0 +1,20 @@
+{
+  "name": "firstapp",
+  "description": "",
+  "main": "app.js",
+  "authors": [
+    "sagar"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/sagar2123/Node",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
