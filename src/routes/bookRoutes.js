@@ -2,7 +2,8 @@ var express = require('express');
 
 var bookRouter = express.Router();
 
-var books = [{
+var route = function(nav){
+    var books = [{
    "title": "Book 1" ,
    "author": "sagar"
 },{
@@ -21,14 +22,17 @@ var books = [{
 
 bookRouter.route('/')
     .get(function(req, res){
-        res.render("books", {title: 'Books', nav : [{Link:'/Books', Text: 'Books'},{Link:'/Authors', Text: 'Authors'}], books: books});
+        res.render("books", {title: 'Books', nav : nav, books: books});
     });
 
 bookRouter.route('/:id')
     .get(function(req, res){
         var id = req.params.id;
         console.log(id);
-        res.render("bookView", {title: 'Books', nav : [{Link:'/Books', Text: 'Books'},{Link:'/Authors', Text: 'Authors'}], book: books[id]});
+        res.render("bookView", {title: 'Books', nav : nav, book: books[id]});
     });
 
-module.exports = bookRouter;
+    return bookRouter
+}
+
+module.exports = route;
